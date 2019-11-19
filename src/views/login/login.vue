@@ -1,5 +1,5 @@
 <template>
-  <router-view></router-view>
+  <h2>这是login组件页</h2>
 </template>
 
 <script>
