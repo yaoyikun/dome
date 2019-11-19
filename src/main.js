@@ -9,6 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 //使用elementUi
 Vue.use(ElementUI);
 
+// 导入全局样式css\
+import './style/base.css'
+
 
 
 //导入router  路由管理
