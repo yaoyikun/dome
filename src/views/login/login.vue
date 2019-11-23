@@ -258,6 +258,7 @@ export default {
       isDisabled:false,
       // 短信验证码按钮文本
       btnTxt: "获取短信验证码",
+      id:''
     };
   },
   methods: {
@@ -293,10 +294,21 @@ export default {
               code: this.loginForm.captcha
             }
           ).then(res => {
-            // window.console.log(res);
+            window.console.log(res);
+            // this.id=res.data.data.id;
+
             if (res.data.code === 200) {
               // 成功
               this.$message.success("你可算回来啦！");
+              
+              // window.console.log(res.request.response);
+              var token=JSON.parse(res.request.response).data.token;
+              // window.console.log(JSON.parse(res.request.response))
+              // window.console.log(token);
+              window.localStorage.setItem('token',token);
+              
+              
+              window.location.href=`http://localhost:8080/#/index/dataList`
             } else {
               // 失败
               this.$message.warning("登录失败了哦");

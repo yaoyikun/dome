@@ -33,3 +33,11 @@ export function sendsms(data){
         data
     })
 }
+// 首页获取头像接口
+export function getToken(data){
+    return axios({
+        url:'/token',
+        method:'post',
+        data
+    })
+}
